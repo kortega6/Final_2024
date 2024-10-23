@@ -69,6 +69,12 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+This data and the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. 
+
+## Conclusion
+
+The bar chart shows that you are less likely to contract covid91 if you did receive the vaccine. The numerical data shows the results in percentages. Within the placebo group 73.80% of individuals got infected with covid91. While in the vaccine group 26.20% contracted covid-91. This indicates the receiving the vaccine as a male significantly reduces the risk of contracted covid-91. The inferential data including the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. All in all these examples and simulations show that is as a male you are far less likely to contract covid-91.
+
 ## Females
 
 $H_0$: The vaccine is not effective in preventing covid91 in females.
