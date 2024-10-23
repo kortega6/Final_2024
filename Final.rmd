@@ -46,13 +46,28 @@ Male <- FinalDat[FinalDat$sex=='M',]
 
 
 ```{r}
-barchartGC(~infected + sex,data=Male)
-barchartGC(~infected + sex,data=Male, type="percent")
+barchartGC(~infected + treatment,data=Male)
+barchartGC(~infected + treatment,data=Male, type="percent")
 
 ```
-From this bar chart, there doesn't doesn't seem to be any significant change in likelihood of contracting covid for men who have taken the vaccine. 
+From this bar chart it shows that you are less likely to contract covid91 if you did receive the vaccine.
 
 ## Numerical results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Male)
+rowPerc(table1)
+colPerc(table1)
+```
+The numerical data shows the results in percentages. Within the placebo group 73.80% of individuals got infected with covid91. While in the vaccine group 26.20% contracted covid-91. This indicates the receiving the vaccine as a male significantly reduces the risk of contracted covid-91. 
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 ## Females
 
