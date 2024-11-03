@@ -26,7 +26,7 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
-##Methods
+## Methods
 
 Question: Is the covid91 vaccine effective in males?
 
@@ -36,6 +36,7 @@ $H_A$: The vaccine is effective in preventing covid91 in males.
 
 infected~sex(M)
 categorical~categorical
+
 We'll be using Cat~Cat
 
 ## Graphical Results
@@ -73,7 +74,7 @@ This data and the Fisher exact test shows that the P-Value is 2.2e-16 which is s
 
 ## Conclusion
 
-The bar chart shows that you are less likely to contract covid91 if you did receive the vaccine. The numerical data shows the results in percentages. Within the placebo group 73.80% of individuals got infected with covid91. While in the vaccine group 26.20% contracted covid-91. This indicates the receiving the vaccine as a male significantly reduces the risk of contracted covid-91. The inferential data including the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. All in all these examples and simulations show that is as a male you are far less likely to contract covid-91.
+The bar chart shows that you are less likely to contract covid91 if you did receive the vaccine. The numerical data shows the results in percentages. Within the placebo group 73.80% of individuals got infected with covid91. While in the vaccine group 26.20% contracted covid-91. This indicates that receiving the vaccine as a male significantly reduces the risk of contracted covid-91. The inferential data including the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. All in all these examples and simulations show that is as a male you are far less likely to contract covid-91 upon receiving the vaccine.
 
 # Females
 
@@ -88,7 +89,44 @@ $H_A$: The vaccine is effective in preventing covid91 in females
 
 infected~sex(F)
 categorical~categorical
+
 We'll be using Cat~Cat
+
+## Graphical Results
+
+```{r}
+Female <- FinalDat[FinalDat$sex=='F',]
+```
+
+```{r}
+barchartGC(~infected + treatment,data=Female)
+barchartGC(~infected + treatment,data=Female, type="percent")
+
+```
+From this chart it shows that females are less likely to contract Covid91 if the recieve the vaccine.
+
+## Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Female)
+rowPerc(table1)
+colPerc(table1)
+```
+The numerical data shows the results in percentages. Within the placebo group 64.93% of individuals got infected with covid91. While in the vaccine group 35.07% contracted covid-91. This indicates the receiving the vaccine as a female significantly reduces the risk of contracted covid-91.
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+This data and the Fisher exact test shows that the P-Value is 1.246e-08 which is significantly lower than 0.05 which means we reject the null hypothesis.
+
+## Conclusion
+
+The bar chart shows that you are less likely to contract Covid91 if you did receive the vaccine. The numerical data shows the results in percentages. Within the placebo group 64.93% of individuals got infected with Covid91. While in the vaccine group 35.07% contracted covid-91. This indicates that receiving the vaccine as a female significantly reduces the risk of contracted Covid-91. The inferential data including the Fisher exact test shows that the P-Value is 1.246e-08 which is significantly lower than 0.05 which means we reject the null hypothesis. In summation these examples and simulations show that is as a female you are far less likely to contract covid-91 if you receive the vaccine.
 
 ## LGBTQ
 
