@@ -24,7 +24,7 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-## Males
+# Males
 
 ## Methods
 
@@ -51,6 +51,7 @@ barchartGC(~infected + treatment,data=Male)
 barchartGC(~infected + treatment,data=Male, type="percent")
 
 ```
+
 From this bar chart it shows that you are less likely to contract covid91 if you did receive the vaccine.
 
 ## Numerical results
@@ -103,6 +104,7 @@ barchartGC(~infected + treatment,data=Female)
 barchartGC(~infected + treatment,data=Female, type="percent")
 
 ```
+
 This bar chart shows that females are less likely to contract Covid91 after reviewing the vaccine.
 
 ## Numerical Results
@@ -154,6 +156,7 @@ barchartGC(~infected + treatment,data=LGBTQ)
 barchartGC(~infected + treatment,data=LGBTQ, type="percent")
 
 ```
+
 This bar chart shows that members of the LGBTQ community are less likely to contract Covid91 after reviewing the vaccine.
 
 ## Numerical Results
@@ -180,9 +183,54 @@ The bar chart shows that you are less likely to contract Covid91 if you did rece
 
 # Druggies
 
+## Methods
+
+Question: Is the vaccine effective in preventing covid91 in a drug user?
+
 $H_0$: The vaccine is not effective in preventing covid91 in drug user.
 
 $H_A$: The vaccine is effective in preventing covid91 in drug users.
 
+infected~DrugUser(yes)
+categorical~categorical
+
+We'll be using Cat~Cat
+
+## Graphictal Results
+
+```{r}
+DrugUser <- FinalDat[FinalDat$DrugUser=='yes',]
+```
+
+```{r}
+barchartGC(~infected + treatment,data=DrugUser)
+barchartGC(~infected + treatment,data=DrugUser, type="percent")
+
+```
+
+According to the bar chart you are more likely to get Covid91 if recieve the vaccine as a drug user.
+
+## Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=DrugUser)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The numerical data shows the results in percentages. Within the placebo group 8.33% of individuals got infected with covid91. While in the vaccine group 91.67% contracted covid-91. This indicates that receiving the vaccine as a drug user significantly increases the risk of contracted covid-91.
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+This data and the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis.
+
+## Conclusion
+
+The bar chart shows that you are far more likely to contract Covid91 if you did receive the vaccine as a drug user. The numerical data shows the results in percentages. Within the placebo group 8.33% of individuals got infected with Covid91. While in the vaccine group 91.67% contracted covid-91. This indicates that receiving the vaccine as a drug user significantly increases the risk of contracted Covid-91. The inferential data including the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis. In summation these examples and simulations show that is as a drug user you are far more likely to contract covid-91 if you receive the vaccine.
 
 # Overall Results and Conclusions
+
