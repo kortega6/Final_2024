@@ -71,7 +71,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-This data and the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. 
+This data shows that the Chi-Square P-Value is 2.2e-16 and the Fisher exact test shows that the P-Value is 2.2e-16 which is significantly lower than 0.05 which means we reject the null hypothesis. 
 
 ## Conclusion
 
@@ -124,7 +124,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-This data and the Fisher exact test shows that the P-Value is 1.246e-08 which is significantly lower than 0.05 which means we reject the null hypothesis.
+The Chi-Square test shows a P-Value of 1.914e-08 and the Fisher exact test shows that the P-Value is 1.246e-08 which is significantly lower than 0.05 which means we reject the null hypothesis.
 
 ## Conclusion
 
@@ -175,7 +175,7 @@ chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-This data and the Fisher exact test shows that the P-Value is 7.269e-07 which is significantly lower than 0.05 which means we reject the null hypothesis.
+The Chi-square test shows that the P-Value is 2.266e-06 and data the Fisher exact test shows that the P-Value is 7.269e-07 which is significantly lower than 0.05 which means we reject the null hypothesis.
 
 ## Conclusion
 
@@ -220,13 +220,15 @@ colPerc(table1)
 
 The numerical data shows the results in percentages. Within the placebo group 8.33% of individuals got infected with covid91. While in the vaccine group 91.67% contracted covid-91. This indicates that receiving the vaccine as a drug user significantly increases the risk of contracted covid-91.
 
+## Inferential Results
+
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-This data and the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis.
+The Chi-Square test shows a P-Value of 1.414e-10 data and the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis.
 
 ## Conclusion
 
@@ -248,7 +250,7 @@ When testing the effectiveness of the vaccine on members of the LGBTQ community,
 
 ## Drug User Conclusion
 
-When testing the effectiveness of the vaccine on people who are drug users, the bar chart shows that you are far more likely to contract Covid91 if you did receive the vaccine as a drug user. The numerical data shows the results in percentages. Within the placebo group 8.33% of individuals got infected with Covid91. While in the vaccine group 91.67% contracted covid-91. This indicates that receiving the vaccine as a drug user significantly increases the risk of contracted Covid-91. The inferential data including the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis. In summation these examples and simulations show that is as a drug user you are far more likely to contract covid-91 if you receive the vaccine.
+When testing the effectiveness of the vaccine on people who are drug users, the bar chart shows that you are far more likely to contract Covid91 if you did receive the vaccine as a drug user. The numerical data shows the results in percentages. Within the placebo group 8.33% of individuals got infected with Covid91. While in the vaccine group 91.67% contracted covid-91. This indicates that receiving the vaccine as a drug user significantly increases the risk of contracted Covid-91. The inferential data included the Fisher exact test shows that the P-Value is 3.261e-12 which is significantly lower than 0.05 which means we reject the null hypothesis. In summation these examples and simulations show that is as a drug user you are far more likely to contract covid-91 if you receive the vaccine.
 
 ## Overall Conclusion
 
